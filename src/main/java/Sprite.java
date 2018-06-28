@@ -4,6 +4,7 @@ public abstract class Sprite {
 
     private String name;
     private int health;
+    private int maxHealth;
     private int balance;
     private ArrayList<Move> moves;
     private Move currentMove;
@@ -14,6 +15,7 @@ public abstract class Sprite {
         this.balance = balance;
         this.moves = moves;
         this.currentMove = this.moves.get(0);
+        this.maxHealth = this.health;
     }
 
     public String getName() {
@@ -61,5 +63,15 @@ public abstract class Sprite {
         return this.currentMove;
     }
 
-    public abstract void attack(Sprite sprite);
+    public void attack(Sprite sprite) {
+        sprite.removeHealth(getCurrentMove().getAttackValue());
+    }
+
+    public int getMaxHealth(){
+        return this.maxHealth;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 }

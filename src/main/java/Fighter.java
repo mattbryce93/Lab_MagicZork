@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Fighter extends Sprite {
+public class Fighter extends Sprite implements iPlayer {
 
     private int armour;
 
@@ -9,7 +9,4 @@ public class Fighter extends Sprite {
         this.armour = armour;
     }
 
-    public void attack(Sprite sprite) {
-        sprite.removeHealth(getCurrentMove().getAttackValue());
-    }
 }
