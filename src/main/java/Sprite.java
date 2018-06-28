@@ -42,11 +42,11 @@ public abstract class Sprite {
         this.health -= value;
     }
 
-    public String checkHealth(){
-        if(this.health <= 0){
-            return this.name + " has died.";
+    public boolean checkHealth(){
+        if(this.health < this.maxHealth){
+            return true;
         }
-        return "this is fine";
+        return false;
     }
 
     public void changeBalance(int value){
@@ -74,4 +74,5 @@ public abstract class Sprite {
     public void setHealth(int health) {
         this.health = health;
     }
+
 }

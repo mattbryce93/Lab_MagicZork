@@ -23,4 +23,8 @@ public class Room {
     public int getTreasure() {
         return this.treasure;
     }
+
+    public void setTreasure(int treasure) {
+        this.treasure = treasure;
+    }
 }
